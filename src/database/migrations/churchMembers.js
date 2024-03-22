@@ -1,6 +1,6 @@
 import { query } from '../db';
 
-const createTable = async () => {
+export const createTable = async () => {
 
   const churchMembersTable = `
   CREATE TABLE Church_members (
