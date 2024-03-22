@@ -4,8 +4,12 @@ import { createTable as createTableSacramentMeeting } from './sacramentMeeting.j
 import { createTable as createTableSustainingAndReleasing } from './sustainingAndReleasing.js'
 import { createTable as createTableTestimonies } from './testimonies.js'
 
-await createTableAnnouncements();
-await createTableChurchMembers();
-await createTableSacramentMeeting();
-await createTableSustainingAndReleasing();
-await createTableTestimonies();
+async function createTables() {
+	await createTableAnnouncements()
+	await createTableChurchMembers()
+	await createTableSacramentMeeting()
+	await createTableSustainingAndReleasing()
+	await createTableTestimonies()
+}
+
+createTables();

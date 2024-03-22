@@ -60,14 +60,14 @@ export const dataValidation = [
 
 	body('sacramentMeeting.firstspeaker')
 		.custom((value, { req }) => {
-			if (isFirstSunday(createLocalDate(req.body.sacramentMeeting.date)) || value?.trim()) return true;
+			if (isFirstSunday(createLocalDate(req.body.sacramentMeeting.date)) || (value && value.trim())) return true;
 
 			throw new Error('The "third speaker" is missing.');
 		}),
 
 	body('sacramentMeeting.secondspeaker')
 		.custom((value, { req }) => {
-			if (isFirstSunday(createLocalDate(req.body.sacramentMeeting.date)) || value?.trim()) return true;
+			if (isFirstSunday(createLocalDate(req.body.sacramentMeeting.date)) || (value && value.trim())) return true;
 
 			throw new Error('The "second speaker" is missing.');
 		}),
@@ -77,7 +77,7 @@ export const dataValidation = [
 
 	body('sacramentMeeting.thirdspeaker')
 		.custom((value, { req }) => {
-			if (isFirstSunday(createLocalDate(req.body.sacramentMeeting.date)) || value?.trim()) return true;
+			if (isFirstSunday(createLocalDate(req.body.sacramentMeeting.date)) || (value && value.trim())) return true;
 
 			throw new Error('The "third speaker" is missing.');
 		}),
