@@ -4,10 +4,15 @@
   "type": "module",
   "description": "",
   "main": "index.js",
+	"engines": {
+		"node": "21.7.1"
+	},
   "scripts": {
 		"start": "node ./src/server.js",
     "dev": "npx nodemon -r dotenv/config --inspect ./src/server.js",
-    "db:migrate": "node ./src/database/migrations/$npm_config_name"
+    "db:migrate": "node ./src/database/migrations/$npm_config_name",
+    "db:create": "node ./src/database/migrations/index.js",
+    "seed": "node ./src/shared/seeders/insertDataChurchMembersTable.js"
   },
   "keywords": [],
   "author": "",
