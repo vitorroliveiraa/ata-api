@@ -3,7 +3,7 @@ import { query } from '../db.js';
 export const createTable = async () => {
 
 	const sacramentMeetingTable = `
-    CREATE TABLE SacramentMeeting (
+    CREATE TABLE IF NOT EXISTS SacramentMeeting (
       id SERIAL PRIMARY KEY,
       date DATE NOT NULL,
       attendance SMALLINT NOT NULL,

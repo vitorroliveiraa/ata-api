@@ -11,9 +11,9 @@
     "start": "node ./src/server.js",
     "dev": "npx nodemon -r dotenv/config --inspect ./src/server.js",
     "db:migrate": "node ./src/database/migrations/$npm_config_name",
-    "db:create": "node ./src/database/migrations/index.js",
+    "db:create": "node ./src/database/index.js",
     "seed": "node ./src/shared/seeders/insertDataChurchMembersTable.js",
-    "setup": "npm install && npm run db:create && npm run seed",
+    "setup": "npm ci && npm run db:create && npm run seed",
     "clean": "rm -rf build && mkdir build",
     "build": "npm run clean && npx babel src --ignore=src/test --out-dir=build -s"
   },

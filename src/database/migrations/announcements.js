@@ -1,9 +1,9 @@
-import { query } from '../db';
+import { query } from '../db.js';
 
 export const createTable = async () => {
 
   const announcementsTable = `
-    CREATE TABLE Announcements (
+    CREATE TABLE IF NOT EXISTS Announcements (
       id SERIAL PRIMARY KEY,
       idSacrament INT REFERENCES SacramentMeeting(id),
       announcement TEXT
