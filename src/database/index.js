@@ -16,9 +16,9 @@ async function executeScript(client, scriptPath) {
 	}
 }
 
-const client = await getClient();
 
 async function main() {
+	const client = await getClient();
 	try {
 		const sqlScriptPath = path.join(process.cwd(), 'src', 'database', 'migrations', 'index.sql');
 		await executeScript(client, sqlScriptPath);
